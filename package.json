@@ -1,5 +1,5 @@
 {
-  "name": "frontend-project-lvl1",
+  "name": "ponttor-frontend-project-lvl1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,6 +19,8 @@
   "bugs": {
     "url": "https://github.com/ponttor/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/ponttor/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/ponttor/frontend-project-lvl1#readme",
+  "dependencies": {
+    "link": "^0.1.5"
+  }
 }
-
