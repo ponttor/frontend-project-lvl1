@@ -1,11 +1,11 @@
 {
   "name": "ponttor-frontend-project-lvl1",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "frontend-project-lvl1": "brain-games.js"
+    "brain-games": "bin/brain-games.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ponttor/frontend-project-lvl1#readme",
   "dependencies": {
-    "link": "^0.1.5"
+    "link": "^0.1.5",
+    "readline-sync": "^1.4.10"
   }
 }
