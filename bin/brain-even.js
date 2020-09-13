@@ -51,6 +51,7 @@ getAnswer();
 // console.log(currentNumber);
 // console.log(currentAnswer[0]);
 
+// conditions
 if (currentAnswer[0] === currentNumber[1]) {
   console.log('Correct!');
   getNumber();
