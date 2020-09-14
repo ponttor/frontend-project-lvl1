@@ -17,39 +17,41 @@ const intro = () => {
 intro();
 
 // game description
-console.log('What is the result of the expression?');
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 // providing number
+const currentNumber = [];
 const min = 1; // manimum value
-const max = 100; // maximum value
-const currentNumber = []; // result
+const max = 100000; // maximum value
+const primestatus = []; // prime or not
+
+const primeCheck = (givenNumber) => {
+  for (let i = 2; i <= givenNumber / 2; i += 1) {
+    if (givenNumber % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
 
 const getNumber = () => {
-  const randomNumber1 = Math.floor(Math.random() * (max - min)) + min; // first number
-  const randomNumber2 = Math.floor(Math.random() * (max - min)) + min; // second number
-  const symbols = ['*', '+', '-'];
-  const randomNumber3 = Math.floor(Math.random() * symbols.length); // operator number
-  const randomSymbol = symbols[randomNumber3];
-  console.log(`Question: ${randomNumber1} ${randomSymbol} ${randomNumber2}`);
-  if (randomNumber3 === 0) {
-    currentNumber[0] = randomNumber1 * randomNumber2;
-    return currentNumber;
-  } if (randomNumber3 === 1) {
-    currentNumber[0] = randomNumber1 + randomNumber2;
-    return currentNumber;
-  } if (randomNumber3 === 2) {
-    currentNumber[0] = randomNumber1 - randomNumber2;
-    return currentNumber[0];
+  const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+  console.log(`Question: ${randomNumber}`);
+  if (primeCheck(randomNumber) === true) {
+    currentNumber[0] = 'yes';
+  } else {
+    currentNumber[0] = 'no'; // odd
   }
+  return currentNumber[0];
 };
 
 // receiving answer
 const currentAnswer = [];
 const getAnswer = () => {
   const receivedAnswer = readlineSync.question('Your answer: ');
-  currentAnswer[0] = Number(receivedAnswer);
+  currentAnswer[0] = receivedAnswer;
 
-  return currentAnswer;
+  return currentAnswer[0];
 };
 
 getNumber();
