@@ -1,6 +1,7 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
+/* eslint-disable import/extensions */
 
-import intro from '/Users/jugofwater/hexlet01/frontend-project-lvl1/src/cli.js';
+import intro from '../src/cli.js';
 
-console.log('Welcome to the Brain Games!');
 intro();

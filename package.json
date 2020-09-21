@@ -1,13 +1,16 @@
 {
-  "name": "ponttor-frontend-project-lvl1",
-  "version": "2.1.1",
-  "description": "",
+  "name": "@hexlet-ponttor/frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "brain games project",
   "main": "index.js",
   "type": "module",
   "bin": {
     "brain-even": "bin/brain-even.js",
     "brain-games": "bin/brain-games.js",
-    "brain-calc": "bin/brain-calc.js"
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-prime": "bin/brain-prime.js",
+    "brain-progression": "bin/brain-progression.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,16 +26,11 @@
   },
   "homepage": "https://github.com/ponttor/frontend-project-lvl1#readme",
   "dependencies": {
-    "eslint-config-airbnb-base": "^14.2.0",
-    "link": "^0.1.5",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0"
+    "eslint-plugin-import": "^2.22.0"
   }
 }
