@@ -1,6 +1,6 @@
 {
-  "name": "@hexlet-ponttor/frontend-project-lvl1",
-  "version": "1.0.0",
+  "name": "ponttor-frontend-project-lvl1",
+  "version": "5.0.2",
   "description": "brain games project",
   "main": "index.js",
   "type": "module",

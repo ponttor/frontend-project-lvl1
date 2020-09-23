@@ -1,14 +1,5 @@
-#!/usr/bin/env node;
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
+#!/usr/bin/env node
 
-import intro from '../src/games/intro.js';
-import gen from '../src/games/gcdGenResult.js';
-import receive from '../src/games/receiveAnswer.js';
-import engine from '../src/games/engine.js';
+import run from '../src/games/brain-gcd.js';
 
-const name = intro();
-
-console.log('Find the greatest common divisor of given numbers.');
-
-engine(gen, receive, name);
+run();
