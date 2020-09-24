@@ -1,6 +1,6 @@
 {
   "name": "ponttor-frontend-project-lvl1",
-  "version": "5.0.2",
+  "version": "5.0.4",
   "description": "brain games project",
   "main": "index.js",
   "type": "module",
