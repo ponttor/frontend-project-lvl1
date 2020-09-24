@@ -4,7 +4,7 @@
 import readlineSync from 'readline-sync';
 
 const userName = [];
-const intro = () => {
+const welcome = () => {
   console.log('Welcome to the Brain Games!');
   console.log('May I have your name?');
   const name = readlineSync.question('Your answer: ');
@@ -13,7 +13,7 @@ const intro = () => {
   return userName[0];
 };
 
-const comparison = (a, b) => {
+const compare = (a, b) => {
   if (a === b) {
     console.log('Correct!');
     return true;
@@ -25,7 +25,7 @@ const comparison = (a, b) => {
 const min = 1;
 const max = 100;
 
-const gen = () => {
+const generateResult = () => {
   const randomNumber1 = Math.floor(Math.random() * (max - min)) + min;
   const randomNumber2 = Math.floor(Math.random() * (max - min)) + min;
   const symbols = ['*', '+', '-'];
@@ -43,19 +43,19 @@ const gen = () => {
   return String(result);
 };
 
-const receive = () => {
+const receiveAnswer = () => {
   const answer = readlineSync.question('Your answer: ');
   return answer;
 };
 
 export default (text) => {
-  const name = intro();
+  const name = welcome();
 
   console.log(text);
 
-  if (comparison(gen(), receive())) {
-    if (comparison(gen(), receive())) {
-      if (comparison(gen(), receive())) {
+  if (compare(generateResult(), receiveAnswer())) {
+    if (compare(generateResult(), receiveAnswer())) {
+      if (compare(generateResult(), receiveAnswer())) {
         console.log(`Congratulations, ${name}!`);
       } else {
         console.log(`Let's try again, ${name}!`);
