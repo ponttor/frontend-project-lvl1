@@ -1,7 +1,7 @@
 # frontend-project-lvl1
 <a href="https://codeclimate.com/github/ponttor/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-<a href="https://github.com/ponttor/frontend-project-lvl1/actions"><img alt="javscript-action status" src="https://github.com//ponttor/frontend-project-lvl1/.github/workflows/ci.yml/badge.svg"></a>
+<a href="https://github.com/ponttor/frontend-project-lvl1/actions"><img alt="javscript-action status" src="https://github.com//ponttor/frontend-project-lvl1/.github/workflows/superlinter.yml/badge.svg"></a>
 
 asciinema:
 brain-even - https://asciinema.org/a/vNncNoghlsNDlic88dN1JhC1X
