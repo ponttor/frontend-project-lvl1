@@ -63,12 +63,13 @@ const generateBrainGcdResult = () => {
   } else {
     minNumber = randomNumber1;
   }
-  for (let i = minNumber; i > 0; i -= 1) {
+  for (let i = minNumber; i > 1; i -= 1) {
     if ((randomNumber1 % i === 0) && (randomNumber2 % i === 0)) {
       const currentNumber = i;
       return String(currentNumber);
     }
   }
+  return '1';
 };
 
 const checkPrime = (givenNumber) => {
@@ -111,7 +112,7 @@ const receiveAnswer = () => {
   return answer;
 };
 
-export default (program,question) => {
+export default (program, question) => {
   const name = welcome();
 
   console.log(question);
@@ -178,7 +179,7 @@ export default (program,question) => {
     } else {
       console.log(`Let's try again, ${name}!`);
     }
-  }  
+  }
 
   if (program === 'brain-progression') {
     if (compare(generateBrainProgressionResult(), receiveAnswer())) {
@@ -194,5 +195,5 @@ export default (program,question) => {
     } else {
       console.log(`Let's try again, ${name}!`);
     }
-  } 
+  }
 };
