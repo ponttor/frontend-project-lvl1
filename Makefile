@@ -1,9 +1,6 @@
 install:
 	npm install
 
-brain-games:
-  	bin/brain-games.js
-
 brain-even:
 	node scr/games/brain-even.js
 
@@ -18,6 +15,9 @@ brain-prime:
 
 brain-progression:
   	node scr/games/brain-progression.js
+
+brain-games:
+  	bin/brain-games.js
 
 publish:
 	npm publish --dry-run
