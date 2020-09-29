@@ -1,34 +1,32 @@
+/* eslint-disable no-restricted-syntax */
+
 import readlineSync from 'readline-sync';
 
-const compare = (a, b) => {
-  if (a === b) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${b}" is wrong answer ;(. Correct answer was "${a}"`);
-  return false;
-};
+const magicNumber = 3;
+export const defineIterationNumber = () => magicNumber;
 
-const receiveAnswer = () => {
-  const answer = readlineSync.question('Your answer: ');
-  return answer;
-};
-
-export default (question, generatedResult) => {
+export const run = (description, results) => {
   console.log('Welcome to the Brain Games!');
   console.log('May I have your name?');
   const name = readlineSync.question('Your answer: ');
   console.log(`Hello, ${name}`);
 
-  console.log(question);
+  console.log(description);
 
-  for (let i = 0; i <= 2; i += 1) {
-    console.log(generatedResult[i][0]);
-    if (compare(generatedResult[i][1], receiveAnswer()) === false) {
+  let currentAnswer = '';
+  let iterationCounter = 0;
+  for (const result of results) {
+    iterationCounter += 1;
+    console.log(result[0]);
+    currentAnswer = readlineSync.question('Your answer: ');
+    if (result[1] === currentAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${currentAnswer}" is wrong answer ;(. Correct answer was "${result[1]}"`);
       console.log(`Let's try again, ${name}!`);
-      break;
+      return;
     }
-    if (i === 2) {
+    if (iterationCounter === results.length) {
       console.log(`Congratulations, ${name}!`);
     }
   }

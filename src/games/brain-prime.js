@@ -1,14 +1,12 @@
-import run from '../engine.js';
+import { defineIterationNumber, run } from '../engine.js';
+import generateRandomNumber from '../random-number.js';
 
-const generalQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const min = 1;
 const max = 100;
-const results = [
-  [null, null],
-  [null, null],
-  [null, null],
-];
+const results = [];
+
+const magicNumber = defineIterationNumber();
 
 const checkPrime = (givenNumber) => {
   for (let i = 2; i <= givenNumber / 2; i += 1) {
@@ -20,20 +18,20 @@ const checkPrime = (givenNumber) => {
 };
 
 const generateBrainPrimeResult = () => {
-  for (let i = 0; i <= 2; i += 1) {
-    const randomNumber = Math.floor(Math.random() * (max - min)) + min;
-    results[i][0] = `Question: ${randomNumber}`;
+  for (let i = 0; i < magicNumber; i += 1) {
+    const randomNumber = generateRandomNumber(max);
+    const question = `Question: ${randomNumber}`;
     if (checkPrime(randomNumber) === true) {
-      results[i][1] = 'yes';
+      const correctAnswer = 'yes';
+      results.push([question, correctAnswer]);
     } else {
-      results[i][1] = 'no';
+      const correctAnswer = 'no';
+      results.push([question, correctAnswer]);
     }
   }
   return results;
 };
 
-const generatedResult = generateBrainPrimeResult();
-
 export default () => {
-  run(generalQuestion, generatedResult);
+  run(description, generateBrainPrimeResult());
 };

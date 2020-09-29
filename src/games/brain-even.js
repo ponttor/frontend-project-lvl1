@@ -1,31 +1,29 @@
-import run from '../engine.js';
+import { defineIterationNumber, run } from '../engine.js';
+import generateRandomNumber from '../random-number.js';
 
-const generalQuestion = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const min = 1;
 const max = 100;
-const results = [
-  [null, null],
-  [null, null],
-  [null, null],
-];
+const results = [];
+
+const magicNumber = defineIterationNumber();
 
 const generateBrainEvenResult = () => {
-  for (let i = 0; i <= 2; i += 1) {
-    const randomNumber = Math.floor(Math.random() * (max - min)) + min;
-    results[i][0] = `Question: ${randomNumber}`;
+  for (let i = 0; i < magicNumber; i += 1) {
+    const randomNumber = generateRandomNumber(max);
+    const question = `Question: ${randomNumber}`;
+    let correctAnswer = '';
     if (randomNumber % 2 === 0) {
-      results[i][1] = 'yes';
+      correctAnswer = 'yes';
     }
     if (randomNumber % 2 !== 0) {
-      results[i][1] = 'no';
+      correctAnswer = 'no';
     }
+    results.push([question, correctAnswer]);
   }
   return results;
 };
 
-const generatedResult = generateBrainEvenResult();
-
 export default () => {
-  run(generalQuestion, generatedResult);
+  run(description, generateBrainEvenResult());
 };
