@@ -8,9 +8,9 @@ const results = [];
 
 const magicNumber = defineIterationNumber();
 
-const checkPrime = (givenNumber) => {
-  for (let i = 2; i <= givenNumber / 2; i += 1) {
-    if (givenNumber % i === 0) {
+const isPrime = (Number) => {
+  for (let i = 2; i <= Number / 2; i += 1) {
+    if (Number % i === 0) {
       return false;
     }
   }
@@ -21,7 +21,7 @@ const generateBrainPrimeResult = () => {
   for (let i = 0; i < magicNumber; i += 1) {
     const randomNumber = generateRandomNumber(max);
     const question = `Question: ${randomNumber}`;
-    if (checkPrime(randomNumber) === true) {
+    if (isPrime(randomNumber) === true) {
       const correctAnswer = 'yes';
       results.push([question, correctAnswer]);
     } else {

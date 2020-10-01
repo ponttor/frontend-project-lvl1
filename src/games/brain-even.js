@@ -12,13 +12,7 @@ const generateBrainEvenResult = () => {
   for (let i = 0; i < magicNumber; i += 1) {
     const randomNumber = generateRandomNumber(max);
     const question = `Question: ${randomNumber}`;
-    let correctAnswer = '';
-    if (randomNumber % 2 === 0) {
-      correctAnswer = 'yes';
-    }
-    if (randomNumber % 2 !== 0) {
-      correctAnswer = 'no';
-    }
+    const correctAnswer = (randomNumber % 2 === 0) ? 'yes' : 'no';
     results.push([question, correctAnswer]);
   }
   return results;
