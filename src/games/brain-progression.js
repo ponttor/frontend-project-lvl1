@@ -1,33 +1,36 @@
 import { defineIterationNumber, run } from '../engine.js';
-import generateRandomNumber from '../random-number.js';
+import { generateRandomNumber } from '../utilities.js';
 
 const description = 'What number is missing in the progression?';
 
+const min = 1;
 const max = 100;
 const length = 10;
-const max0 = 10;
-const progression = [];
 const results = [];
 
-const magicNumber = defineIterationNumber();
+const iterationNumber = defineIterationNumber();
 
-const generateBrainProgressionResult = () => {
-  for (let i = 0; i < magicNumber; i += 1) {
-    const missingPosition = generateRandomNumber(length);
-    const stepValue = generateRandomNumber(max0);
-    progression[0] = generateRandomNumber(max);
-    for (let y = 1; y <= length - 1; y += 1) {
-      progression[y] = stepValue + progression[y - 1];
-    }
+const generateProgression = (step, firstNumber) => {
+  const array = [];
+  array[0] = firstNumber;
+  for (let i = 1; i <= length - 1; i += 1) {
+    array[i] = step + array[i - 1];
+  }
+  return array;
+};
+
+export default () => {
+  for (let i = 0; i < iterationNumber; i += 1) {
+    const stepValue = generateRandomNumber(1, 10);
+    const firstValue = generateRandomNumber(min, max);
+    const progression = generateProgression(stepValue, firstValue);
+    const missingPosition = generateRandomNumber(0, length - 1);
     const result = progression[missingPosition];
     progression[missingPosition] = '..';
     const question = `Question: ${progression.toString()}`;
     const correctAnswer = String(result);
     results.push([question, correctAnswer]);
   }
-  return results;
-};
 
-export default () => {
-  run(description, generateBrainProgressionResult());
+  run(description, results);
 };

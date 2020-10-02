@@ -1,35 +1,31 @@
 import { defineIterationNumber, run } from '../engine.js';
-import generateRandomNumber from '../random-number.js';
+import { generateRandomNumber } from '../utilities.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
+const min = 1;
 const max = 100;
 const results = [];
-let minNumber = 0;
 
-const magicNumber = defineIterationNumber();
+const iterationNumber = defineIterationNumber();
 
-const generateBrainGcdResult = () => {
-  for (let i = 0; i < magicNumber; i += 1) {
-    const randomNumber1 = generateRandomNumber(max);
-    const randomNumber2 = generateRandomNumber(max);
-    const question = `Question: ${randomNumber1} ${randomNumber2}`;
-    if (randomNumber1 > randomNumber2) {
-      minNumber = randomNumber2;
-    } else {
-      minNumber = randomNumber1;
-    }
-    for (let y = minNumber; y > 0; y -= 1) {
-      if ((randomNumber1 % y === 0) && (randomNumber2 % y === 0)) {
-        const correctAnswer = String(y);
-        results.push([question, correctAnswer]);
-        break;
-      }
+const calculateGcd = (number1, number2) => {
+  const minNumber = (number1 > number2) ? number2 : number1;
+  for (let i = minNumber; i > 1; i -= 1) {
+    if ((number1 % i === 0) && (number2 % i === 0)) {
+      return i;
     }
   }
-  return results;
+  return 1;
 };
 
 export default () => {
-  run(description, generateBrainGcdResult());
+  for (let i = 0; i < iterationNumber; i += 1) {
+    const randomNumber1 = generateRandomNumber(min, max);
+    const randomNumber2 = generateRandomNumber(min, max);
+    const question = `Question: ${randomNumber1} ${randomNumber2}`;
+    const correctAnswer = String(calculateGcd(randomNumber1, randomNumber2));
+    results.push([question, correctAnswer]);
+  }
+  run(description, results);
 };
