@@ -1,5 +1,5 @@
 /* eslint-disable no-confusing-arrow */
-import { Raundscount, run } from '../engine.js';
+import { raundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -9,7 +9,7 @@ const max = 100;
 
 const isEven = (number) => (number % 2 === 0);
 
-const generateOneRound = () => {
+const generateRound = () => {
   const randomNumber = generateRandomNumber(min, max);
   const question = `Question: ${randomNumber}`;
   if (isEven(randomNumber)) {
@@ -20,8 +20,8 @@ const generateOneRound = () => {
 
 export default () => {
   const results = [];
-  for (let i = 0; i < Raundscount; i += 1) {
-    results.push(generateOneRound());
+  for (let i = 0; i < raundsCount; i += 1) {
+    results.push(generateRound());
   }
   run(description, results);
 };

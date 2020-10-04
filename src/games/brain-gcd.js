@@ -1,4 +1,4 @@
-import { Raundscount, run } from '../engine.js';
+import { raundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -16,7 +16,7 @@ const gcd = (number1, number2) => {
   return 1;
 };
 
-const generateOneRound = () => {
+const generateRound = () => {
   const randomNumber1 = generateRandomNumber(min, max);
   const randomNumber2 = generateRandomNumber(min, max);
   const question = `Question: ${randomNumber1} ${randomNumber2}`;
@@ -26,8 +26,8 @@ const generateOneRound = () => {
 
 export default () => {
   const results = [];
-  for (let i = 0; i < Raundscount; i += 1) {
-    results.push(generateOneRound());
+  for (let i = 0; i < raundsCount; i += 1) {
+    results.push(generateRound());
   }
   run(description, results);
 };

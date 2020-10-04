@@ -1,6 +1,6 @@
 {
   "name": "ponttor-frontend-project-lvl1",
-  "version": "5.1.4",
+  "version": "5.2.0",
   "description": "brain games project",
   "main": "index.js",
   "type": "module",
@@ -19,6 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/ponttor/frontend-project-lvl1.git"
   },
+  "keywords": [
+    "Hexlet",
+    "Brain-games",
+    "frontend-project-lvl1"
+  ],
   "author": "ponttor",
   "license": "ISC",
   "bugs": {

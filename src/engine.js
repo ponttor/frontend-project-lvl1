@@ -2,7 +2,7 @@
 
 import readlineSync from 'readline-sync';
 
-export const Raundscount = 3;
+export const raundsCount = 3;
 
 export const run = (description, results) => {
   console.log('Welcome to the Brain Games!');
@@ -16,7 +16,7 @@ export const run = (description, results) => {
     const [question, correctAnswer] = result;
     console.log(question);
     const currentAnswer = readlineSync.question('Your answer: ');
-    if (result[1] === currentAnswer) {
+    if (correctAnswer === currentAnswer) {
       console.log('Correct!');
     } else {
       console.log(`"${currentAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);

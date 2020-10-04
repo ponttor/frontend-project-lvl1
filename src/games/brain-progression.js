@@ -1,4 +1,4 @@
-import { Raundscount, run } from '../engine.js';
+import { raundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
 const description = 'What number is missing in the progression?';
@@ -16,7 +16,7 @@ const generateProgression = (progressionStep, firstNumber) => {
   return progression;
 };
 
-const generateOneRound = () => {
+const generateRound = () => {
   const stepValue = generateRandomNumber(1, 10);
   const firstValue = generateRandomNumber(min, max);
   const generatedProgression = generateProgression(stepValue, firstValue);
@@ -30,8 +30,8 @@ const generateOneRound = () => {
 
 export default () => {
   const results = [];
-  for (let i = 0; i < Raundscount; i += 1) {
-    results.push(generateOneRound());
+  for (let i = 0; i < raundsCount; i += 1) {
+    results.push(generateRound());
   }
   run(description, results);
 };
