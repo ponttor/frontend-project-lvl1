@@ -1,4 +1,4 @@
-import { raundsCount, run } from '../engine.js';
+import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
 const description = 'What number is missing in the progression?';
@@ -30,7 +30,7 @@ const generateRound = () => {
 
 export default () => {
   const results = [];
-  for (let i = 0; i < raundsCount; i += 1) {
+  for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
   run(description, results);
