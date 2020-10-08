@@ -19,6 +19,8 @@ Instructions for installing and launching the game (video instructions can be se
 Install: npm i ponttor-frontend-project-lvl1
 Start the game commands: brain-even, brain-calc, brain-gcd, brain-prime, brain-progression.
 
+<a href="https://asciinema.org/a/9m5NM6bEEcsm8KwY07d8g4ZI9" target="_blank"><img src="https://asciinema.org/a/9m5NM6bEEcsm8KwY07d8g4ZI9.svg" /></a>
+
 <a href="https://asciinema.org/a/ISmEpyzaNk9ytCCnKNBGJJcse" target="_blank"><img src="https://asciinema.org/a/ISmEpyzaNk9ytCCnKNBGJJcse.svg" /></a>
 
 <a href="https://asciinema.org/a/c3L2L2tFZc0VqAMfF4FF9SNPb" target="_blank"><img src="https://asciinema.org/a/c3L2L2tFZc0VqAMfF4FF9SNPb.svg" /></a>
