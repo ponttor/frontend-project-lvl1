@@ -4,7 +4,20 @@
 <a href="https://github.com/ponttor/frontend-project-lvl1/actions"><img alt="javscript-action status" src="https://github.com/ponttor/frontend-project-lvl1/workflows/Node%20CI/badge.svg"></a>
 
 
-Game asciinemas:
+Brain Games is a set of five console games built on the principle of popular mobile brain-boosting apps. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. Wrong answers end the game and offer to play it again.
+
+Games:
+
+Brain calculator. Arithmetic expressions to be evaluated.
+Brain even. Definition of an even number.
+Brain gcd. Determination of the greatest common factor.
+Brain prime. Definition of a prime number.
+Brain progression. Finds missing numbers in a sequence of numbers.
+
+Instructions for installing and launching the game (video instructions can be seen below):
+
+Install: npm i ponttor-frontend-project-lvl1
+Start the game commands: brain-even, brain-calc, brain-gcd, brain-prime, brain-progression.
 
 <a href="https://asciinema.org/a/ISmEpyzaNk9ytCCnKNBGJJcse" target="_blank"><img src="https://asciinema.org/a/ISmEpyzaNk9ytCCnKNBGJJcse.svg" /></a>
 
