@@ -1,7 +1,7 @@
 import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
-const description = 'What number is missing in the progression?';
+// const description = 'What number is missing in the progression?';
 
 const min = 1;
 const max = 100;
@@ -9,7 +9,7 @@ const progressionLength = 10;
 
 const generateProgression = (progressionStep, firstNumber) => {
   const progression = [firstNumber];
-  for (let i = 1; i <= progressionLength - 1; i += 1) {
+  for (let i = 1; i < progressionLength; i += 1) {
     const previousElementOfProgression = progression[i - 1];
     progression.push(progressionStep + previousElementOfProgression);
   }
@@ -23,7 +23,7 @@ const generateRound = () => {
   const missingPosition = generateRandomNumber(0, progressionLength - 1);
   const result = generatedProgression[missingPosition];
   generatedProgression[missingPosition] = '..';
-  const question = `Question: ${generatedProgression.toString()}`;
+  const question = `Question: ${generatedProgression.join()}`;
   const correctAnswer = String(result);
   return [question, correctAnswer];
 };
@@ -33,5 +33,5 @@ export default () => {
   for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
-  run(description, results);
+  run(5, results);
 };

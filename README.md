@@ -6,12 +6,12 @@
 
 Game asciinemas:
 
-brain-calc - https://asciinema.org/a/PWYiXNwx3niUuqmOWLui7NYl2
+<a href="https://asciinema.org/a/ISmEpyzaNk9ytCCnKNBGJJcse" target="_blank"><img src="https://asciinema.org/a/ISmEpyzaNk9ytCCnKNBGJJcse.svg" /></a>
 
-brain-even - https://asciinema.org/a/2WhHClytx9kd3EW3E7mm0fja1
+<a href="https://asciinema.org/a/c3L2L2tFZc0VqAMfF4FF9SNPb" target="_blank"><img src="https://asciinema.org/a/c3L2L2tFZc0VqAMfF4FF9SNPb.svg" /></a>
 
-brain-gcd - https://asciinema.org/a/q3HHaZw0Hhq1dtGv1dT8Mqeex
+<a href="https://asciinema.org/a/ra8vYRsLpYds6hqp6QbIN1Fwu" target="_blank"><img src="https://asciinema.org/a/ra8vYRsLpYds6hqp6QbIN1Fwu.svg" /></a>
 
-brain-prime - https://asciinema.org/a/CvSuhPPwUXwNVIWjKTKuIhxrE
+<a href="https://asciinema.org/a/2WKXLDmHFonzhDQKnm29TDAOI" target="_blank"><img src="https://asciinema.org/a/2WKXLDmHFonzhDQKnm29TDAOI.svg" /></a>
 
-brain-progression - https://asciinema.org/a/nHd9Nm6PJjXfDfUAJln7P4R8z
+<a href="https://asciinema.org/a/KHfk7Nc3qt6pYZQBNqRUT9Bib" target="_blank"><img src="https://asciinema.org/a/KHfk7Nc3qt6pYZQBNqRUT9Bib.svg" /></a>

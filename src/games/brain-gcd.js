@@ -1,13 +1,13 @@
 import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
-const description = 'Find the greatest common divisor of given numbers.';
+// const description = 'Find the greatest common divisor of given numbers.';
 
-const min = 1;
-const max = 100;
+const min = -30;
+const max = 30;
 
 const gcd = (number1, number2) => {
-  const minNumber = (number1 > number2) ? number2 : number1;
+  const minNumber = Math.min(number1, number2);
   for (let i = minNumber; i > 1; i -= 1) {
     if ((number1 % i === 0) && (number2 % i === 0)) {
       return i;
@@ -29,5 +29,5 @@ export default () => {
   for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
-  run(description, results);
+  run(3, results);
 };

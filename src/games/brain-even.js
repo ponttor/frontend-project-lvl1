@@ -2,7 +2,7 @@
 import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
-const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+// const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const min = 1;
 const max = 100;
@@ -23,5 +23,5 @@ export default () => {
   for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
-  run(description, results);
+  run(2, results);
 };

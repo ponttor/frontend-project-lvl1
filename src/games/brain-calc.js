@@ -1,15 +1,15 @@
 import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
-const description = 'What is the result of the expression?';
+// const description = 'What is the result of the expression?';
 
-const min = 1;
-const max = 100;
+const min = -10;
+const max = 30;
 const listOfOperators = '*+-';
 
 const getRandomOperator = (operators) => {
-  const randomSymbolNumber = generateRandomNumber(min, operators.length);
-  return operators[randomSymbolNumber - 1];
+  const operatorIndex = generateRandomNumber(0, operators.length - 1);
+  return operators[operatorIndex];
 };
 
 const calculate = (number1, number2, operator) => {
@@ -39,5 +39,5 @@ export default () => {
   for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
-  run(description, results);
+  run(1, results);
 };
