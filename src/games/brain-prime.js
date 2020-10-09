@@ -1,10 +1,10 @@
 import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
-// const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-
-const min = -30;
+const min = -10;
 const max = 50;
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
@@ -17,11 +17,10 @@ const isPrime = (number) => {
 
 const generateRound = () => {
   const randomNumber = generateRandomNumber(min, max);
-  const question = `Question: ${randomNumber}`;
   if (isPrime(randomNumber)) {
-    return [question, 'yes'];
+    return [[randomNumber], 'yes'];
   }
-  return [question, 'no'];
+  return [[randomNumber], 'no'];
 };
 
 export default () => {
@@ -29,5 +28,5 @@ export default () => {
   for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
-  run(4, results);
+  run(description, results);
 };

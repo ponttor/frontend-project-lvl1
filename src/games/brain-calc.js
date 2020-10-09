@@ -1,11 +1,11 @@
 import { roundsCount, run } from '../engine.js';
 import { generateRandomNumber } from '../utilities.js';
 
-// const description = 'What is the result of the expression?';
-
 const min = -10;
 const max = 30;
 const listOfOperators = '*+-';
+
+const description = 'What is the result of the expression?';
 
 const getRandomOperator = (operators) => {
   const operatorIndex = generateRandomNumber(0, operators.length - 1);
@@ -30,8 +30,7 @@ const generateRound = () => {
   const randomNumber2 = generateRandomNumber(min, max);
   const randomOperator = getRandomOperator(listOfOperators);
   const correctAnswer = String(calculate(randomNumber1, randomNumber2, randomOperator));
-  const question = `Question: ${randomNumber1} ${randomOperator} ${randomNumber2}`;
-  return [question, correctAnswer];
+  return [[randomNumber1, randomOperator, randomNumber2], correctAnswer];
 };
 
 export default () => {
@@ -39,5 +38,5 @@ export default () => {
   for (let i = 0; i < roundsCount; i += 1) {
     results.push(generateRound());
   }
-  run(1, results);
+  run(description, results);
 };
