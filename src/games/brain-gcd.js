@@ -20,7 +20,8 @@ const generateRound = () => {
   const randomNumber1 = generateRandomNumber(min, max);
   const randomNumber2 = generateRandomNumber(min, max);
   const correctAnswer = String(gcd(randomNumber1, randomNumber2));
-  return [[randomNumber1, randomNumber2], correctAnswer];
+  const question = [randomNumber1, randomNumber2].join(' ');
+  return [question, correctAnswer];
 };
 
 export default () => {

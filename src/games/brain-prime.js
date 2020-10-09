@@ -18,9 +18,9 @@ const isPrime = (number) => {
 const generateRound = () => {
   const randomNumber = generateRandomNumber(min, max);
   if (isPrime(randomNumber)) {
-    return [[randomNumber], 'yes'];
+    return [randomNumber, 'yes'];
   }
-  return [[randomNumber], 'no'];
+  return [randomNumber, 'no'];
 };
 
 export default () => {

@@ -12,9 +12,9 @@ const isEven = (number) => (number % 2 === 0);
 const generateRound = () => {
   const randomNumber = generateRandomNumber(min, max);
   if (isEven(randomNumber)) {
-    return [[randomNumber], 'yes'];
+    return [randomNumber, 'yes'];
   }
-  return [[randomNumber], 'no'];
+  return [randomNumber, 'no'];
 };
 
 export default () => {

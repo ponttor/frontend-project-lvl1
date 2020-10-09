@@ -13,9 +13,8 @@ export const run = (description, results) => {
   console.log(description);
 
   for (const result of results) {
-    const [answers, correctAnswer] = result;
-    const question = answers.join(' ');
-    console.log(question);
+    const [question, correctAnswer] = result;
+    console.log(`Question: ${question}`);
     const currentAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer === currentAnswer) {
       console.log('Correct!');

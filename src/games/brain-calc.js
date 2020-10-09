@@ -30,7 +30,8 @@ const generateRound = () => {
   const randomNumber2 = generateRandomNumber(min, max);
   const randomOperator = getRandomOperator(listOfOperators);
   const correctAnswer = String(calculate(randomNumber1, randomNumber2, randomOperator));
-  return [[randomNumber1, randomOperator, randomNumber2], correctAnswer];
+  const question = [randomNumber1, randomOperator, randomNumber2].join(' ');
+  return [question, correctAnswer];
 };
 
 export default () => {
