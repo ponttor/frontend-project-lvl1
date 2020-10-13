@@ -7,26 +7,33 @@ const max = 50;
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
-  for (let i = 2; i < number; i += 1) {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i <= number / 2; i += 1) {
     if (number % i === 0) {
       return false;
     }
   }
-  return number > 1;
+  return true;
 };
 
 const generateRound = () => {
   const randomNumber = generateRandomNumber(min, max);
   if (isPrime(randomNumber)) {
-    return [randomNumber, 'yes'];
+    const correctAnswer = 'yes';
+    const question = randomNumber;
+    return [question, correctAnswer];
   }
-  return [randomNumber, 'no'];
+  const correctAnswer = 'no';
+  const question = randomNumber;
+  return [question, correctAnswer];
 };
 
 export default () => {
-  const results = [];
+  const rounds = [];
   for (let i = 0; i < roundsCount; i += 1) {
-    results.push(generateRound());
+    rounds.push(generateRound());
   }
-  run(description, results);
+  run(description, rounds);
 };

@@ -7,30 +7,29 @@ const progressionLength = 10;
 
 const description = 'What number is missing in the progression?';
 
-const generateProgression = (progressionStep, firstNumber) => {
-  const progression = [firstNumber];
-  for (let i = 1; i < progressionLength; i += 1) {
-    const previousElementOfProgression = progression[i - 1];
-    progression.push(progressionStep + previousElementOfProgression);
+const generateProgression = () => {
+  const progression = [];
+  const start = generateRandomNumber(min, max);
+  const diff = generateRandomNumber(1, 10);
+  for (let i = 0; i < progressionLength; i += 1) {
+    progression.push(start + i * diff);
   }
   return progression;
 };
 
 const generateRound = () => {
-  const stepValue = generateRandomNumber(1, 10);
-  const firstValue = generateRandomNumber(min, max);
-  const generatedProgression = generateProgression(stepValue, firstValue);
+  const progression = generateProgression();
   const missingPosition = generateRandomNumber(0, progressionLength - 1);
-  const result = generatedProgression[missingPosition];
-  generatedProgression[missingPosition] = '..';
+  const result = progression[missingPosition];
+  progression[missingPosition] = '..';
   const correctAnswer = String(result);
-  return [generatedProgression, correctAnswer];
+  return [progression, correctAnswer];
 };
 
 export default () => {
-  const results = [];
+  const rounds = [];
   for (let i = 0; i < roundsCount; i += 1) {
-    results.push(generateRound());
+    rounds.push(generateRound());
   }
-  run(description, results);
+  run(description, rounds);
 };

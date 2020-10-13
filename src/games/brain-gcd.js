@@ -20,14 +20,14 @@ const generateRound = () => {
   const randomNumber1 = generateRandomNumber(min, max);
   const randomNumber2 = generateRandomNumber(min, max);
   const correctAnswer = String(gcd(randomNumber1, randomNumber2));
-  const question = [randomNumber1, randomNumber2].join(' ');
+  const question = `${randomNumber1} ${randomNumber2}`;
   return [question, correctAnswer];
 };
 
 export default () => {
-  const results = [];
+  const rounds = [];
   for (let i = 0; i < roundsCount; i += 1) {
-    results.push(generateRound());
+    rounds.push(generateRound());
   }
-  run(description, results);
+  run(description, rounds);
 };

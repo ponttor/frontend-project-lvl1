@@ -12,15 +12,19 @@ const isEven = (number) => (number % 2 === 0);
 const generateRound = () => {
   const randomNumber = generateRandomNumber(min, max);
   if (isEven(randomNumber)) {
-    return [randomNumber, 'yes'];
+    const correctAnswer = 'yes';
+    const question = randomNumber;
+    return [question, correctAnswer];
   }
-  return [randomNumber, 'no'];
+  const correctAnswer = 'no';
+  const question = randomNumber;
+  return [question, correctAnswer];
 };
 
 export default () => {
-  const results = [];
+  const rounds = [];
   for (let i = 0; i < roundsCount; i += 1) {
-    results.push(generateRound());
+    rounds.push(generateRound());
   }
-  run(description, results);
+  run(description, rounds);
 };
